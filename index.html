@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/8ff35dbde1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dark.css">
+    <title>Canvas Paint App</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="toggle" class="toggleButton" onclick="changeMode(this)"><i class="fa-solid fa-moon"></i></div>
+
+
+
+    </header>
+
+    <div id="main" class="mainDiv">
+
+
+
+        <div id="headText" onclick="displayCanvas(event)">
+            <h1 class="cssanimation leFadeIn sequence cssanimation open " id="head">Dream Drawer</h1>
+            <p>
+                <span class="cssanimation leFadeIn sequence cssanimation open "> Draw </span>
+                <span class="cssanimation leFadeIn sequence cssanimation open "> your </span>
+                <span class="cssanimation leFadeIn sequence cssanimation open "> Dreams </span>
+                <span class="cssanimation leFadeIn sequence cssanimation open "> here </span>
+            </p>
+        </div>
+        <!--
+            <div id="canvasDiv">
+            
+             <div id="outer">
+            
+            <canvas id="canvas" ></canvas>
+            
+        </div>
+
+        <div id="tools">
+            <button class="button toolItems" id="b1" onclick="undo()" onmouseover="hover(this)"
+                onmouseout="backToClr(this)"> Undo </button>
+            <button onclick="clearCanvas()" id="b2" onmouseout="backToClr(this)" onmouseover="hover(this)"
+                class="button toolItems" type="button"> Clear </button>
+            <button onclick="download()" id="b3" onmouseover="hover(this)" onmouseout="backToClr(this)"
+                class="button toolItems" type="button"> Download </button>
+
+            <input type="color" id="color" class="toolItems" oninput="changeClr(this)">
+            <input class="toolItems" type="range" min="1" max="100" id="range" oninput="changeWidth(this)"></input>
+        </div> 
+    </div>
+-->
+    </div>
+
+    <!-- <script>
+    function resize(){    
+    $("#canvas").outerHeight($(window).height()-$("#canvas").offset().top- Math.abs($("#canvas").outerHeight(true) - $("#canvas").outerHeight()));
+  }
+  $(document).ready(function(){
+    resize();
+    $(window).on("resize", function(){                      
+        resize();
+    });
+});
+
+</script> -->
+    <script src="app.js"></script>
+</body>
+
+</html>
