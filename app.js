@@ -20,10 +20,10 @@ let index = -1;
 
 
 let changeMode = (element) => {
-    isDark = (isDark)? false : true
+    isDark = (isDark) ? false : true
     let body = document.querySelector(`body`);
-    body.setAttribute("class" , (isDark) ? "dark" : "light");
-    element.innerHTML= ((isDark)?  `<i class="fa-solid fa-sun"></i>` : `<i class="fa-solid fa-moon"></i>`)
+    body.setAttribute("class", (isDark) ? "dark" : "light");
+    element.innerHTML = ((isDark) ? `<i class="fa-solid fa-sun"></i>` : `<i class="fa-solid fa-moon"></i>`)
     // (isDark)? startBgColor = "black" : startBgColor ="white" ; 
     // drawColor = ((isDark)? "white" : "Black" ) ;
 }
@@ -38,20 +38,23 @@ let displayCanvas = (event) => {
     <div id="canvasDiv">
             
     <div id="tools" class="toolBar">
-    <button id="undoButton" class"toolItems"><i class="fa-solid fa-rotate-left "></i></button>
-    <button id="clearButton" class"toolItems"><i class="fa-sharp fa-solid fa-trash" ></i></button>
-    <button id="downloadButton" class"toolItems"><i class="fa-solid fa-download" ></i></button>
+       <button id="undoButton" class"toolItems"><i class="fa-solid fa-rotate-left "></i></button>
+       <button id="clearButton" class"toolItems"><i class="fa-sharp fa-solid fa-trash" ></i></button>
+       <button id="downloadButton" class"toolItems"><i class="fa-solid fa-download" ></i></button>
     
-    
-       <input type="color" id="color" class="toolItems" oninput="changeClr(this)">
-       <input class="toolItems" type="range" min="1" max="100" id="range" oninput="changeWidth()"></input>
-       </div>
+       <label for="">
+       <input type="color" id="color" class=" clrInput" oninput="changeClr(this)">
+       <img src="./clrPicker.gif" alt="" class="clrPicker">
+       </label>
+
+       <input class="toolItems" type="range" value="2" min="1" max="100" id="range" oninput="changeWidth()" ></input>
+    </div>
        
    <canvas id="canvas" ></canvas>
    
 </div>
 `
-header.innerHTML += `<h1 class= "topHead" >Dream Drawer</h1>`
+    header.innerHTML += `<h1 class= "topHead" >Dream Drawer</h1>`
 
 
     const canvas = document.querySelector(`#canvas`);
@@ -61,16 +64,16 @@ header.innerHTML += `<h1 class= "topHead" >Dream Drawer</h1>`
     let context = canvas.getContext("2d");
     context.fillStyle = startBgColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     let range = document.querySelector(`#range`);
     let color = document.querySelector(`#color`);
 
-    range.addEventListener("input" , (event) => {
-        drawWidth = event.target.value 
+    range.addEventListener("input", (event) => {
+        drawWidth = event.target.value
     })
 
-    color.addEventListener("input" , (event) => {
-        drawColor = event.target.value 
+    color.addEventListener("input", (event) => {
+        drawColor = event.target.value
     })
 
 
@@ -202,15 +205,15 @@ header.innerHTML += `<h1 class= "topHead" >Dream Drawer</h1>`
         link.download = "cavas-drawing.jpg";
         link.click();
     }
-    
+
     let downloadButton = document.querySelector(`#downloadButton`);
     let clearButton = document.querySelector(`#clearButton`);
     let undoButton = document.querySelector(`#undoButton`);
-    
-    downloadButton.addEventListener("click" , download , false)
-    clearButton.addEventListener("click" , clearCanvas , false)
-    undoButton.addEventListener("click" , undo , false)
-    
+
+    downloadButton.addEventListener("click", download, false)
+    clearButton.addEventListener("click", clearCanvas, false)
+    undoButton.addEventListener("click", undo, false)
+
 
 }
 
